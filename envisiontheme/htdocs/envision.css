@@ -1,32 +1,16 @@
-/********************************************
-   AUTHOR:  			Erwin Aligam
-   WEBSITE:   			http://www.styleshout.com/
-    TEMPLATE NAME:		Envision
-   TEMPLATE CODE: 	S-0013
-   VERSION:          1.1
-    LAST MODIFIED     Nov-14-2007
- *******************************************/
-
-/********************************************
-   HTML ELEMENTS
-********************************************/
-
-/* Top Elements */
+/*************************************************************
+    Original Author: Erwin Aligam
+   Original Website: http://www.styleshout.com/
+             Author: Pedro Algarvio
+            Website: https://hg.ufsoft.org/TracEnvisionTheme/
+      Template Name: Envision
+            Version: 1.0
+ ************************************************************/
 
 * { margin: 0; padding: 0; outline: 0 }
-body {
-  background: #CCC;
-  color: #555;
-}
 
-/*h1, h2, h3, p {
-    padding: 10px;
-    margin: 0;
-}*/
-ul, ol {
-    margin: 5px 20px;
-    padding: 0 20px;
-}
+body { background: #CCC; color: #555; }
+ul, ol { margin: 5px 20px; padding: 0 20px; }
 
 code {
   margin: 5px 0;
@@ -50,10 +34,7 @@ blockquote {
   background: #FAFAFA url(imgs/quote.gif) no-repeat 5px 5px;
 }
 
-/*
-  -- Even more rounded corners with CSS: Base stylesheet --
-*/
-
+/* Round Corners Style - START */
 .layout {
  position:relative;
  margin:0px auto;
@@ -122,26 +103,24 @@ blockquote {
 }
 
 .layout .layout_bd {
-  background-color: #fff; color: #000; margin: 0 0;
+  background-color:
+  #fff;
+  color: #000;
+  margin: 0 0;
+  margin-top: 4px;
   padding: 0px 10px 10px 10px;
   /* extra content protector - preventing vertical overflow (past background) */
-  position:static;
-  max-height:1600px;
-  overflow:auto; /* note that overflow:auto causes a rather annoying redraw
-                    "lag" in Firefox 2, and may degrade performance. Might be worth
-                    trying without if you aren't worried about height/overflow issues. */
+  position: static;
+  max-height: 1600px;
+  overflow: auto; /* note that overflow:auto causes a rather annoying redraw
+                     "lag" in Firefox 2, and may degrade performance. Might be
+                     worth trying without if you aren't worried about
+                     height/overflow issues. */
 }
 
-.layout h1,
-.layout p {
- margin:0px; /* margins will blow out backgrounds, leaving whitespace. */
- padding:0.5em 0px 0.5em 0px;
-}
+.layout h1 { padding-bottom:0px; }
+/* Round Corners Style - END */
 
-.layout h1 {
- padding-bottom:0px;
-}
-#metanav.nav ul { font-size: 11px; }
 #metanav li { border-right: none; }
 #metanav :link, #metanav :visited {
     color: #fff;
@@ -161,17 +140,14 @@ blockquote {
   padding: 0 0 5px 0;
 }
 #mainnav.nav ul { font-size: 12px; vertical-align: middle; padding-top: 10px;}
-#mainnav li {
-  padding: 0 0 0 0;
-  border: none;
-}
+#mainnav li { padding: 0 0 0 0; border: none; }
 #mainnav :link, #mainnav :visited {
-    padding: 0 6px;
-    color: #fff;
-    text-decoration: none;
-    background: none;
-    border: none;
-    font-weight: bold;
+  padding: 0 6px;
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-weight: bold;
 }
 #mainnav :link:hover, #mainnav :visited:hover {
   color: #D4E59F; background-color: transparent; border-right: none;
@@ -182,14 +158,15 @@ blockquote {
 
 #main #content #tabs ul li { list-style-image: none; margin-left: 0px; }
 
-#search input.button {
-  font: bol.layout_b 12px Arial, Sans-serif;
+#search input.button, .buttons input, #attachments input {
+  font: 12px Arial, Sans-serif;
   height: 20px;
   margin: 0;
   padding: 2px 3px;
-  color: #FFF;
+  color: #fff;
   background: #8EB50C url(imgs/button-bg.jpg) repeat-x 0 0;
   border: none;
+  font-weight: bold;
 }
 
 #search input.textbox {
@@ -203,23 +180,34 @@ blockquote {
   background: transparent url(imgs/footer_hr.png) repeat-x top;
   border: none;
   padding: 10px 0 0 0;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 /* headers */
 h1, h2, h3 {
-    font-family: 'Trebuchet MS', Tahoma, Sans-serif;
+  font-family: 'Trebuchet MS', Tahoma, Sans-serif;
+  color: #006699;
+  padding-top: 2em;
 }
-h1 {
-    font-size: 140%;
-    font-weight: normal;
-    color: #006699;
+h1 { padding-top: 1em; }
+
+.layout ul li {
+  list-style-image: url(imgs/bullet.png);
+  _list-style-image: url(imgs/bullet.gif);
 }
-h2 {
-    font-size: 130%;
-    color: #88ac0b;
+.layout .prefs ul li, #tabs ul li { list-style-image: none; }
+
+#ticket, #info, div#tabs, .wiki-toc { background-color: #edfdce; color: #68774A; }
+
+table.listing tbody tr.odd { background-color: #f4ffde; }
+
+table.listing thead th {
+  background-image: url(imgs/green-bg.png);
+  padding-left: 12px;
+  padding-right: 12px;
+  color: #fff;
+  border-left: 1px solid #B6D59A;
+  border-bottom: solid 2px #fff;
 }
-h3 {
-    font-size: 110%;
-    color: #666666;
-}
+
+#ticket table.properties th { text-align: right; padding-right: 0px; }
