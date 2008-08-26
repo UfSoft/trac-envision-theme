@@ -124,13 +124,12 @@ blockquote {
 .layout .layout_bd {
   background-color: #fff; color: #000; margin: 0 0;
   padding: 0px 10px 10px 10px;
-}
-
-.layout .layout_wrapper {
- /* extra content protector - preventing vertical overflow (past background) */
- position:static;
- max-height:1600px;
- overflow:auto; /* note that overflow:auto causes a rather annoying redraw "lag" in Firefox 2, and may degrade performance. Might be worth trying without if you aren't worried about height/overflow issues. */
+  /* extra content protector - preventing vertical overflow (past background) */
+  position:static;
+  max-height:1600px;
+  overflow:auto; /* note that overflow:auto causes a rather annoying redraw
+                    "lag" in Firefox 2, and may degrade performance. Might be worth
+                    trying without if you aren't worried about height/overflow issues. */
 }
 
 .layout h1,
@@ -155,7 +154,7 @@ blockquote {
 }
 
 #mainnav {
-  background: url(imgs/menu_middle.png) repeat-x 0 0;
+  background: url(imgs/menu.jpg) repeat-x 0 0;
   height: 33px;
   border: none;
   margin: 0 0;
