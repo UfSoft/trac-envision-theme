@@ -103,15 +103,14 @@ blockquote {
 }
 
 .layout .layout_bd {
-  background-color:
-  #fff;
+  background-color: #fff;
   color: #000;
   margin: 0 0;
   margin-top: 4px;
   padding: 0px 10px 10px 10px;
   /* extra content protector - preventing vertical overflow (past background) */
   position: static;
-  max-height: 1600px;
+  max-height: 2300px;
   overflow: auto; /* note that overflow:auto causes a rather annoying redraw
                      "lag" in Firefox 2, and may degrade performance. Might be
                      worth trying without if you aren't worried about
