@@ -12,63 +12,14 @@
 ********************************************/
 
 /* Top Elements */
-/*
+
 * { margin: 0; padding: 0; outline: 0 }
-*/
 body {
-    background: #CCC;
-    font: 70%/1.5em Verdana, Tahoma, arial, sans-serif;
-    color: #555;
-    /* text-align: center; */
+  background: #CCC;
+  color: #555;
 }
 
-/* links */
-/*
-a, a:visited {
-    text-decoration: none;
-    color: #2180BC;
-    background: inherit;
-}
-a:hover {
-    color: #88ac0b;
-    background: inherit;
-    text-decoration: underline;
-}
-*/
-/* headers */
-h1, h2, h3 {
-    font-family: 'Trebuchet MS', Tahoma, Sans-serif;
-}
-h1 {
-    font-size: 150%;
-    font-weight: normal;
-    color: #006699;
-}
-h2 {
-    font-size: 140%;
-    text-transform: uppercase;
-    color: #88ac0b;
-}
-h3 {
-    font-size: 120%;
-    color: #666666;
-}
-
-/* images
-img {
-    background: #FAFAFA;
-    border: 1px solid #E5E5E5;
-    padding: 5px;
-}
-img.float-right {
-  margin: 5px 0px 10px 10px;
-}
-img.float-left {
-  margin: 5px 10px 10px 0px;
-}
-*/
-/*
-h1, h2, h3, p {
+/*h1, h2, h3, p {
     padding: 10px;
     margin: 0;
 }*/
@@ -99,385 +50,129 @@ blockquote {
   background: #FAFAFA url(imgs/quote.gif) no-repeat 5px 5px;
 }
 
-/* start - table */
 /*
-table {
-    border-collapse: collapse;
-    margin: 10px;
-}
-th strong {
-    color: #fff;
-}
-th {
-    background: #93BC0C;
-    height: 29px;
-    padding-left: 12px;
-    padding-right: 12px;
-    color: #FFF;
-    text-align: left;
-    border-left: 1px solid #B6D59A;
-    border-bottom: solid 2px #FFF;
-}
-tr {
-    height: 30px;
-}
-td {
-    border-left: 1px solid #FFF;
-    border-bottom: solid 1px #ffffff;
-}
-td.first,th.first {
-    border-left: 0px;
-}
-tr.row-a {
-    background: #F8F8F8;
-}
-tr.row-b {
-    background: #EFEFEF;
-}
-/* end - table */
-
-/* form elements */
-
-/*
-form {
-    margin:10px; padding: 0 5px;
-    border: 1px solid #f2f2f2;
-    background-color: #FAFAFA;
-} */
-/*
-label {
-    display:block;
-    font-weight:bold;
-    margin:5px 0;
-}
-
-input {
-    padding:2px;
-    border:1px solid #eee;
-    font: normal 1em Verdana, sans-serif;
-    color:#777;
-}
-textarea {
-    width:400px;
-    padding:2px;
-    font: normal 1em Verdana, sans-serif;
-    border:1px solid #eee;
-    height:100px;
-    display:block;
-    color:#777;
-}
-
+  -- Even more rounded corners with CSS: Base stylesheet --
 */
 
-input.button {
-    font: bold 12px Arial, Sans-serif;
-    height: 24px;
-    margin: 0;
-    padding: 2px 3px;
-    color: #FFF;
-    background: #8EB50C url(imgs/button-bg.jpg) repeat-x 0 0;
-    border: none;
+.layout {
+ position:relative;
+ margin:0px auto;
+ min-width:8em;
+ max-width:2560px; /* based on image dimensions - not quite consistent with drip styles yet */
+ color:#fff;
+ z-index:1;
+ margin-left:15px; /* default, width of left corner */
+ margin-bottom:0.5em; /* spacing under dialog */
 }
 
-#logo {
-  float: left;
-  position: absolute;
-  top: 45px;
-  left: 55px;
+.layout .layout_content,
+.layout .layout_t,
+.layout .layout_b,
+.layout .layout_b div {
+ background:transparent url(imgs/layout.png) no-repeat top right;
+ _background-image:url(imgs/layout.gif);
 }
 
-/* search form */
-.searchform {
-    background-color: transparent;
-    border: none;
-    margin: 0; padding: 5px 25px 25px 0;
-    text-align: right;
-    vertical-align: middle;
-    float: right;
-    position: absolute;
-    top: 45px;
-    right: 45px;
-}
-.searchform input.textbox {
-    width: 120px;
-    color: #777;
-    padding: 2px;
-    border: 1px solid #E5E5E5;
-}
-.searchform input.button {
-    width: 60px;
-    height: 24px;
-    padding: 2px 5px;
+.layout .layout_content {
+ position:relative;
+ zoom:1;
+ _overflow-y:hidden;
+ padding:15px 15px 0px 0px;
 }
 
-/********************************************
-   LAYOUT
-********************************************/
-#wrap {
-    width: 820px;
-    background: #CCC url(imgs/content.jpg) repeat-y center top;
-    margin: 0 auto;
-    text-align: left;
-}
-#content-wrap {
-    clear: both;
-    width: 760px;
-    padding: 0;
-    margin: 10px auto;
+.layout .layout_t {
+ /* top+left vertical slice */
+ position:absolute;
+ left:0px;
+ top:0px;
+ width:15px; /* top slice width */
+ margin-left:-15px;
+ height:100%;
+ _height:1600px; /* arbitrary long height, IE 6 */
+ background-position:top left;
 }
 
-#header {
-    height: 130px;
-    background-color: #ccc;
-    padding: 0;
+.layout .layout_b {
+ /* bottom */
+ position:relative;
+ width:100%;
+}
+
+.layout .layout_b,
+.layout .layout_b div {
+ height:15px; /* height of bottom cap/shade */
+ font-size:1px;
+}
+
+.layout .layout_b {
+ background-position:bottom right;
+}
+
+.layout .layout_b div {
+ position:relative;
+ width:15px; /* bottom corner width */
+ margin-left:-15px;
+ background-position:bottom left;
+}
+
+.layout .layout_hd,
+.layout .layout_bd,
+.layout .layout_ft {
+ position:relative;
+}
+
+.layout .layout_bd {
+  background-color: #fff; color: #000; margin: 0 0;
+  padding: 0px 10px 10px 10px;
+}
+
+.layout .layout_wrapper {
+ /* extra content protector - preventing vertical overflow (past background) */
+ position:static;
+ max-height:1600px;
+ overflow:auto; /* note that overflow:auto causes a rather annoying redraw "lag" in Firefox 2, and may degrade performance. Might be worth trying without if you aren't worried about height/overflow issues. */
+}
+
+.layout h1,
+.layout p {
+ margin:0px; /* margins will blow out backgrounds, leaving whitespace. */
+ padding:0.5em 0px 0.5em 0px;
+}
+
+.layout h1 {
+ padding-bottom:0px;
+}
+#metanav.nav ul { font-size: 11px; }
+#metanav li { border-right: none; }
+#metanav :link, #metanav :visited {
     color: #fff;
-}
-
-#header td.left {
-  background-color: #fff;
-  background-image: url(imgs/header_left.png);
-  background-position: left;
-  background-repeat: no-repeat;
-
-}
-
-#header td.middle {
-  background-color: #ccc;
-  background-image: url(imgs/header_middle.png);
-  background-position: top;
-  background-repeat: repeat-x;
-  vertical-align: bottom;
-}
-
-#header td.right {
-  background: #CCC url(imgs/header_right.png) no-repeat center top;
-
-}
-#header :link, #header :visited { color: #fff; }
-
-#header :link:hover, #header :visited:hover {
-  color: #D4E59F; text-decoration: none;
-}
-
-#header h1#logo-text a {
-    position: absolute;
-    margin: 0; padding: 0;
-    font: bolder 44px 'Trebuchet MS', Arial, Sans-serif;
-    letter-spacing: -2px;
-    color: #FFF;
-    text-transform: none;
     text-decoration: none;
     background: transparent;
-
-    /* change the values of top and left to adjust the position of the logo*/
-    top: 25px; left: 47px;
+    border: none;
 }
-#header p#slogan {
-    position: absolute;
-    margin: 0; padding: 0;
-    font: normal 12px 'Trebuchet MS', Arial, Sans-serif;
-    text-transform: none;
-    color: #FFF;
-
-    /* change the values of top and left to adjust the position of the slogan*/
-    top: 70px; left: 55px;
+#metanav :link:hover, #metanav :visited:hover {
+  color: #D4E59F; background-color: transparent; border: none;
 }
 
-/* header links */
-#header #header-links {
-    position: absolute;
-    top: 20px; right: 30px;
-    color: #C6DDEE;
-    font-size: 10px;
-}
-#header #header-links a {
-    color: #FFF;
-    text-decoration: none;
-}
-#header #header-links a:hover {
-    color: #D4E59F;
-}
-
-/* Menu */
-#menu {
-    clear: both;
-    margin: 0 auto; padding: 0;
-    font: bold 12px/37px Verdana, Arial, Tahoma, Sans-serif;
-    height: 37px;
-}
-#menu td.left {
-  background: #CCC url(imgs/menu_left.png) repeat-y top;
-  vertical-align: bottom;
-
-}
-#menu td.right {
-  background: #CCC url(imgs/menu_right.png) repeat-y top;
-
-}
-#menu td.middle {
+#mainnav {
   background: url(imgs/menu_middle.png) repeat-x 0 0;
-  text-align: right;
+  height: 33px;
+  border: none;
+  margin: 0 0;
+  padding: 0 0 5px 0;
 }
-
-
-/* Main Column */
-#main #content {
-  padding: 7px;
-  padding-left: 11px;
-  margin: 5px 0 0 5px;
-  padding-right: 2em;
+#mainnav.nav ul { font-size: 12px; vertical-align: middle; padding-top: 10px;}
+#mainnav li {
+  padding: 0 0 0 0;
+  border: none;
 }
-#main #content td.middle { padding-right: 2em; }
-#main #content h2 {
-    margin-top: 10px;
-    font: Bold 140% 'Trebuchet MS', Tahoma, Sans-serif;
-    color: #88ac0b;
-    padding: 5px 0 5px 25px;
-    border-bottom: 1px solid #EFF0F1;
-    background: #FFF url(imgs/square-green.png) no-repeat 3px 50%;
-    text-transform: none;
-}
-#main #content h2 a {
-    background: none;
-    color: #88ac0b;
-    text-decoration: none;
-}
-
-#main #content ul li { list-style-image: url(imgs/bullet.gif); }
-
-.post-footer {
-    background-color: #FAFAFA;
-    padding: 5px; margin: 20px 10px 10px 10px;
-    border: 1px solid #f2f2f2;
-    font-size: 95%;
-}
-.post-footer .date {
-    background: url(imgs/clock.gif) no-repeat left center;
-    padding-left: 20px; margin: 0 10px 0 5px;
-}
-.post-footer .comments {
-    background: url(imgs/comment.gif) no-repeat left center;
-    padding-left: 20px; margin: 0 10px 0 5px;
-}
-.post-footer .readmore {
-    background: url(imgs/page.gif) no-repeat left center;
-    padding-left: 20px; margin: 0 10px 0 5px;
-}
-
-/* Sidebar */
-#sidebar {
-    float: right;
-    width: 26.5%;
-    padding: 0; margin: 0;
-    color: #68774A;
-}
-#sidebar h3 {
-    margin-top: 10px;
-    padding: 5px 5px;
-    font: bold 1.4em 'Trebuchet MS', Tahoma, Sans-serif;
-    color: #728D26;
-}
-#sidebar ul.sidemenu {
-    list-style: none;
-    text-align: left;
-    margin: 7px 4px 8px 0; padding: 0;
-    text-decoration: none;
-    background: url(imgs/dots.jpg) repeat-x left top;
-}
-#sidebar ul.sidemenu li {
-    list-style: none;
-    background: url(imgs/dots.jpg) repeat-x left bottom;
-    padding: 4px 0 4px 5px;
-    margin: 0 2px;
-    color: #68774A;
-}
-
-/* * html body #sidebar ul.sidemenu li {
-    height: 1%;
-} */
-#sidebar ul.sidemenu li a {
-    text-decoration: none;
-    background-image: none;
-    color: #666666;
-}
-#sidebar ul.sidemenu li a:hover {
-    color: #1773BC;
-}
-#sidebar ul.sidemenu ul { margin: 0 0 0 5px; padding: 0; }
-#sidebar ul.sidemenu ul li { background: none; }
-
-/* Content */
-
-#main-content td.left, #main td.left {
-  background: #CCC url(imgs/content_left.png) repeat-y top;
-}
-#main-content td.right, #main td.right {
-  background: #CCC url(imgs/content_right.png) repeat-y left;
-}
-
-#main-content td.middle, #main td.middle { background-color: #fff; }
-
-/* Footer */
-#footer {
-    color: #C6DDEE;
-    height: 80px;
-    text-align: center;
-    font-size: 92%;
-}
-#footer a {
-    color: #FFF;
-    text-decoration: none;
-}
-
-#footer td.left {
-  background: #CCC url(imgs/footer_left.png) no-repeat top;
-}
-
-#footer td.middle {
-  background: #CCC url(imgs/footer_middle.png) repeat-x top;
-}
-
-#footer td.right {
-  background: #CCC url(imgs/footer_right.png) no-repeat top;
-}
-
-/* alignment classes */
-.float-left  { float: left; }
-.float-right { float: right; }
-.align-left  { text-align: left; }
-.align-right { text-align: right; }
-
-/* display and additional classes */
-.clear { clear: both; }
-
-
-:link:hover, :visited:hover {
-  color: #2180BC;
-  background-color: transparent;
-}
-
-#layout_table {
-  border: 0px solid black; width: 100%; padding: 0 0; margin: 0 0;
-  border-collapse: collapse;
-}
-#layout_table td { border: none;
-  border-spacing: 0; }
-#layout_table td.left { width: 37px; }
-#layout_table td.middle { width: 94%; }
-#layout_table #main td.middle { height: 300px; min-height: 300px; vertical-align: top; }
-#layout_table td.right { width: 37px; }
-
-
 #mainnav :link, #mainnav :visited {
-    padding: 0 12px;
+    padding: 0 6px;
     color: #fff;
     text-decoration: none;
     background: none;
     border: none;
     font-weight: bold;
-}
-#mainnav ul li.last a {
-  padding-right: 20px;
 }
 #mainnav :link:hover, #mainnav :visited:hover {
   color: #D4E59F; background-color: transparent; border-right: none;
@@ -487,3 +182,45 @@ input.button {
 #ctxtnav.nav ul { margin-top: 5px; }
 
 #main #content #tabs ul li { list-style-image: none; margin-left: 0px; }
+
+#search input.button {
+  font: bol.layout_b 12px Arial, Sans-serif;
+  height: 20px;
+  margin: 0;
+  padding: 2px 3px;
+  color: #FFF;
+  background: #8EB50C url(imgs/button-bg.jpg) repeat-x 0 0;
+  border: none;
+}
+
+#search input.textbox {
+  width: 120px;
+  color: #777;
+  padding: 2px;
+  border: 1px solid #E5E5E5;
+}
+
+#footer {
+  background: transparent url(imgs/footer_hr.png) repeat-x top;
+  border: none;
+  padding: 10px 0 0 0;
+  margin-top: 5px;
+}
+
+/* headers */
+h1, h2, h3 {
+    font-family: 'Trebuchet MS', Tahoma, Sans-serif;
+}
+h1 {
+    font-size: 140%;
+    font-weight: normal;
+    color: #006699;
+}
+h2 {
+    font-size: 130%;
+    color: #88ac0b;
+}
+h3 {
+    font-size: 110%;
+    color: #666666;
+}

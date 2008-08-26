@@ -8,59 +8,32 @@
       xmlns:xi="http://www.w3.org/2001/XInclude"
       xmlns:py="http://genshi.edgewall.org/" py:strip="">
   <head py:match="head" py:attrs="select('@*')">
-    <!--! Preload Layout Images -->
     <script type="text/javascript">
-      var hrefs = [<py:for each="part in ['header', 'menu', 'content', 'footer']">
-        "${req.href.chrome("theme/imgs/%s_left.png" % part)}",
-        "${req.href.chrome("theme/imgs/%s_right.png" % part)}",
-        <py:if test="part != 'content'">"${req.href.chrome("theme/imgs/%s_middle.png" % part)}",</py:if>
-      </py:for>];
-      /* <![CDATA[ */
-      var preloader = new Image();
-      preloader.onload = function() {
-        console.log('inload');
-        if ( hrefs.length ) {
-          var cl = hrefs.pop();
-          console.log(cl);
-          preloader.src = cl;
-        } else {
-          console.log('ended');
-          window.document.documentElement.style.display = '';
-        };
-      };
-      console.log('start');
-      window.document.documentElement.style.display = 'none';
-      preloader.src = hrefs.pop();
-      /* ]]> */
+      var IMG = new Image();
+      IMG.src = "${req.href.chrome('theme/imgs/layout.png')}"
     </script>
     ${select('*')}
     <link type="text/css" href="${req.href.chrome('theme/envision.css')}" rel="stylesheet"/>
   </head>
   <body py:match="body" py:attrs="select('@*')">
-    <div py:def="navigation(category)" id="${category}" class="nav">
-      <ul py:if="chrome.nav.get(category)">
-        <li py:for="idx, item in  enumerate(chrome.nav.get(category))"
-            class="${classes(first_last(idx, chrome.nav.get(category)),
-                   active=item.active)}">${item.label}</li>
-      </ul>
-    </div>
-    <table id="layout_table">
-      <tr id="header">
-        <td class="left">&nbsp;</td>
-        <td class="middle">
-          <div py:choose="" id="logo">
-            <a py:when="chrome.logo.src!=req.href.chrome('common/trac_banner.png')"
-               href="${chrome.logo.link}"><img
-              src="${chrome.logo.src}" alt="${chrome.logo.alt}"/></a>
-            <a py:when="chrome.logo.src==req.href.chrome('common/trac_banner.png')"
-              href="${chrome.logo.link}"><img
-              src="${req.href.chrome('theme/imgs/trac_banner.png')}"
-              alt="${chrome.logo.alt}"/></a>
-            <h1 py:otherwise=""><a href="${chrome.logo.link}">${project.name}</a></h1>
+    <div class="layout">
+      <div class="layout_content"> <!--! top right PNG -->
+        <div class="layout_wrapper">
+        <div class="layout_t"></div> <!--! top left PNG -->
+          <div id="header" class="layout_hd">
+            <div py:choose="" id="logo">
+              <a py:when="chrome.logo.src!=req.href.chrome('common/trac_banner.png')"
+                 href="${chrome.logo.link}"><img
+                src="${chrome.logo.src}" alt="${chrome.logo.alt}"/></a>
+              <a py:when="chrome.logo.src==req.href.chrome('common/trac_banner.png')"
+                href="${chrome.logo.link}"><img
+                src="${req.href.chrome('theme/imgs/trac_banner.png')}"
+                alt="${chrome.logo.alt}"/></a>
+              <h1 py:otherwise=""><a href="${chrome.logo.link}">${project.name}</a></h1>
+            </div>
           </div>
-          <!--! Search -->
-
-            <form id="quicksearch" class="searchform noprint" action="${href.search()}" method="get">
+            <!--! Search -->
+            <form id="search" class="searchform noprint" action="${href.search()}" method="get">
               <div>
                 <input type="text" name="q" id="search-input" size="18" accesskey="f" />
                 <input type="hidden" name="wiki" value="on" />
@@ -69,7 +42,6 @@
                 <input class="button" type="submit" value="Search"/>
               </div>
             </form>
-
           <div id="metanav" class="nav">
             <ul py:if="chrome.nav['metanav']">
               <li py:for="idx, item in enumerate(chrome.nav['metanav'])"
@@ -78,24 +50,15 @@
               </li>
             </ul>
           </div>
-        </td>
-        <td class="right">&nbsp;</td>
-      </tr>
-      <tr id="menu" class="nav">
-        <td class="left">&nbsp;</td>
-        <td id="mainnav" class="middle">
-          <ul py:if="chrome.nav.get('mainnav')">
-            <li py:for="idx, item in enumerate(chrome.nav.get('mainnav'))"
-                class="${classes(first_last(idx, chrome.nav['mainnav']), selected=item.active)}">
-              ${item.label}
-            </li>
-          </ul>
-        </td>
-        <td class="right">&nbsp;</td>
-      </tr>
-      <tr id="main">
-        <td class="left">&nbsp;</td>
-        <td class="middle">
+          <div id="mainnav" class="nav">
+            <ul py:if="chrome.nav.get('mainnav')">
+              <li py:for="idx, item in enumerate(chrome.nav.get('mainnav'))"
+                  class="${classes(first_last(idx, chrome.nav['mainnav']), selected=item.active)}">
+                ${item.label}
+              </li>
+            </ul>
+          </div>
+          <div class="layout_bd">
           <div id="ctxtnav" class="nav">
             <ul>
               <li py:for="i, elm in enumerate(chrome.ctxtnav)"
@@ -103,24 +66,26 @@
             </ul>
           </div>
           ${select('*')}
-        </td>
-        <td class="right">&nbsp;</td>
-      </tr>
-      <tr id="footer">
-        <td class="left">&nbsp;</td>
-        <td class="middle">
-            <a id="tracpowered" href="http://trac.edgewall.org/"><img
-               src="${href.chrome('theme/imgs/trac_logo_mini.png')}" height="30"
-               width="107" alt="Trac Powered"/></a>
-            <p class="left">
-              Powered by <a href="${href.about()}">Trac ${trac.version}</a><br />
-              By <a href="http://www.edgewall.org/">Edgewall Software</a>.
-            </p>
-            <p class="right">${chrome.footer}</p>
-        </td>
-        <td class="right">&nbsp;</td>
-      </tr>
-    </table>
+          </div>
+          <div class="layout_ft">
+            <div id="footer">
+              <a id="tracpowered" href="http://trac.edgewall.org/"><img
+                 src="${href.chrome('theme/imgs/trac_logo_mini.png')}" height="30"
+                 width="107" alt="Trac Powered"/></a>
+              <p class="left">
+                Powered by <a href="${href.about()}">Trac ${trac.version}</a><br />
+                By <a href="http://www.edgewall.org/">Edgewall Software</a>.
+              </p>
+              <p class="right">${chrome.footer}</p>
+            </div>
+          </div>
+        <!--! End Content  -->
+        </div>
+        </div>
+      <!-- bottom PNG -->
+      <div class="layout_b"><div></div></div>
+    <!--! End Layout -->
+    </div>
   </body>
   <xi:include href="site.html"><xi:fallback /></xi:include>
 </html>
