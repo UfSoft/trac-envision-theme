@@ -180,6 +180,11 @@ blockquote {
   border: none;
   padding: 10px 0 0 0;
   margin-top: 4px;
+  color: #fff;
+}
+#footer :link, #footer :visited { color: #fff; }
+#footer :link:hover, #footer :visited:hover {
+  color: #D4E59F; background-color: transparent;
 }
 
 /* headers */
