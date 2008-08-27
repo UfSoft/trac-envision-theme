@@ -1,13 +1,10 @@
 /*************************************************************
     Original Author: Erwin Aligam
-   Original Website: http://www.styleshout.com/
+   Original Website: http://www.styleshout.com
              Author: Pedro Algarvio
-            Website: https://hg.ufsoft.org/TracEnvisionTheme/
+            Website: https://hg.ufsoft.org/TracEnvisionTheme
       Template Name: Envision
-            Version: 1.0
  ************************************************************/
-
-* { margin: 0; padding: 0; outline: 0 }
 
 body { background: #CCC; color: #555; }
 ul, ol { margin: 5px 20px; padding: 0 20px; }
@@ -36,70 +33,69 @@ blockquote {
 
 /* Round Corners Style - START */
 .layout {
- position:relative;
- margin:0px auto;
- min-width:8em;
- max-width:2560px; /* based on image dimensions - not quite consistent with drip styles yet */
- color:#fff;
- z-index:1;
- margin-left:15px; /* default, width of left corner */
- margin-bottom:0.5em; /* spacing under dialog */
+  position: relative;
+  margin: 0px auto;
+  min-width: 8em;
+  max-width: 2560px; /* based on image dimensions - not quite consistent with
+                        drip styles yet */
+  color: #fff;
+  z-index: 1;
+  margin-left: 15px; /* default, width of left corner */
+  margin-bottom: 0.5em; /* spacing under dialog */
 }
 
 .layout .layout_content,
 .layout .layout_t,
 .layout .layout_b,
 .layout .layout_b div {
- background:transparent url(imgs/layout.png) no-repeat top right;
- _background-image:url(imgs/layout.gif);
+  background: transparent url(imgs/layout.png) no-repeat top right;
+  _background-image: url(imgs/layout.gif);
 }
 
 .layout .layout_content {
- position:relative;
- zoom:1;
- _overflow-y:hidden;
- padding:15px 15px 0px 0px;
+  position: relative;
+  zoom: 1;
+  _overflow-y: hidden;
+  padding: 15px 15px 0px 0px;
 }
 
 .layout .layout_t {
  /* top+left vertical slice */
- position:absolute;
- left:0px;
- top:0px;
- width:15px; /* top slice width */
- margin-left:-15px;
- height:100%;
- _height:1600px; /* arbitrary long height, IE 6 */
- background-position:top left;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 15px; /* top slice width */
+  margin-left: -15px;
+  height: 100%;
+  _height: 1600px; /* arbitrary long height, IE 6 */
+  background-position: top left;
 }
 
 .layout .layout_b {
  /* bottom */
- position:relative;
- width:100%;
+  position: relative;
+  width: 100%;
 }
 
 .layout .layout_b,
 .layout .layout_b div {
- height:15px; /* height of bottom cap/shade */
- font-size:1px;
+  height: 15px; /* height of bottom cap/shade */
+  font-size: 1px;
 }
 
 .layout .layout_b {
- background-position:bottom right;
+  background-position: bottom right;
 }
 
 .layout .layout_b div {
- position:relative;
- width:15px; /* bottom corner width */
- margin-left:-15px;
- background-position:bottom left;
+  position: relative;
+  width: 15px; /* bottom corner width */
+  margin-left: -15px;
+  background-position: bottom left;
 }
 
-.layout .layout_hd,
-.layout .layout_bd,
-.layout .layout_ft {
- position:relative;
+.layout .layout_hd, .layout .layout_bd, .layout .layout_ft {
+  position: relative;
 }
 
 .layout .layout_bd {
@@ -117,7 +113,6 @@ blockquote {
                      height/overflow issues. */
 }
 
-.layout h1 { padding-bottom:0px; }
 /* Round Corners Style - END */
 
 #metanav li { border-right: none; }
@@ -191,9 +186,9 @@ blockquote {
 h1, h2, h3 {
   font-family: 'Trebuchet MS', Tahoma, Sans-serif;
   color: #006699;
-  padding-top: 2em;
+  /*padding-top: 2em;
 }
-h1 { padding-top: 1em; }
+h1 { padding-top: 1em; */}
 
 .layout ul li {
   list-style-image: url(imgs/bullet.png);
@@ -201,7 +196,9 @@ h1 { padding-top: 1em; }
 }
 .layout .prefs ul li, #tabs ul li { list-style-image: none; }
 
-#ticket, #info, div#tabs, .wiki-toc { background-color: #edfdce; color: #68774A; }
+#ticket, #info, div#tabs, .wiki-toc {
+  background-color: #edfdce; color: #68774A;
+}
 
 table.listing tbody tr.odd { background-color: #f4ffde; }
 
