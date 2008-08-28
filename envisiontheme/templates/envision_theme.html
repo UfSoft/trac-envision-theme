@@ -58,58 +58,60 @@
             </ul>
           </div>
           <div class="layout_bd">
-          <div id="ctxtnav" class="nav">
-            <ul>
-              <li py:for="i, elm in enumerate(chrome.ctxtnav)"
-                  class="${i == 0 and 'first ' or None}${i+1 == len(chrome.ctxtnav) and 'last' or None}">$elm</li>
-            </ul>
-          </div>
-          <!--! Tickets -->
-          <div id="ticket" class="layout dialog"
-               py:match="div[@id='ticket']" py:attrs="select('@*')">
-            <div class="layout_content"> <!--! top right PNG -->
-              <div class="layout_wrapper">
-                <div class="layout_t"></div> <!--! top left PNG -->
-                <div class="layout_bd">
-                  ${select('*')}
+          <div id="main">
+            <div id="ctxtnav" class="nav">
+              <ul>
+                <li py:for="i, elm in enumerate(chrome.ctxtnav)"
+                    class="${i == 0 and 'first ' or None}${i+1 == len(chrome.ctxtnav) and 'last' or None}">$elm</li>
+              </ul>
+            </div>
+            <!--! Tickets -->
+            <div id="ticket" class="layout dialog"
+                 py:match="div[@id='ticket']" py:attrs="select('@*')">
+              <div class="layout_content"> <!--! top right PNG -->
+                <div class="layout_wrapper">
+                  <div class="layout_t"></div> <!--! top left PNG -->
+                  <div class="layout_bd">
+                    ${select('*')}
+                  </div>
                 </div>
               </div>
+              <!-- bottom PNG -->
+              <div class="layout_b"><div></div></div>
             </div>
-            <!-- bottom PNG -->
-            <div class="layout_b"><div></div></div>
-          </div>
 
-          <!--! Prefs form's  -->
-          <div id="prefs_div" class="layout dialog"
-               py:match="form[@id='prefs']" py:attrs="select('@*')">
-            <div class="layout_content"> <!--! top right PNG -->
-              <div class="layout_wrapper">
-                <div class="layout_t"></div> <!--! top left PNG -->
-                <div class="layout_bd">
-                  ${select('*')}
+            <!--! Prefs form's  -->
+            <div id="prefs_div" class="layout dialog"
+                 py:match="form[@id='prefs']" py:attrs="select('@*')">
+              <div class="layout_content"> <!--! top right PNG -->
+                <div class="layout_wrapper">
+                  <div class="layout_t"></div> <!--! top left PNG -->
+                  <div class="layout_bd">
+                    ${select('*')}
+                  </div>
                 </div>
               </div>
+              <!-- bottom PNG -->
+              <div class="layout_b"><div></div></div>
             </div>
-            <!-- bottom PNG -->
-            <div class="layout_b"><div></div></div>
-          </div>
 
-          <!--! Wiki TOC's -->
-          <div class="wiki" once="true"
-               py:match="div[@class='wiki']" py:attrs="select('@*')">
-               ${select('*')}
-            <script type="text/javascript">
-              jQuery(document).ready( function($) {
-                var inner_html = $('div[@class="wiki-toc"]').html();
-                var new_html = '  <div class="layout_content">' +
-                  '   <div class="layout_t"></div>\n   <div class="layout_bd">' +
-                  inner_html + '</div></div><div class="layout_b dialog"><div></div></div>';
-                  $('div[@class="wiki-toc"]').html(new_html).
-                    addClass('layout').addClass('dialog');
-              });
-            </script>
-          </div>
-          ${select('*')}
+            <!--! Wiki TOC's -->
+            <div class="wiki" once="true"
+                 py:match="div[@class='wiki']" py:attrs="select('@*')">
+                 ${select('*')}
+              <script type="text/javascript">
+                jQuery(document).ready( function($) {
+                  var inner_html = $('div[@class="wiki-toc"]').html();
+                  var new_html = '  <div class="layout_content">' +
+                    '   <div class="layout_t"></div>\n   <div class="layout_bd">' +
+                    inner_html + '</div></div><div class="layout_b dialog"><div></div></div>';
+                    $('div[@class="wiki-toc"]').html(new_html).
+                      addClass('layout').addClass('dialog');
+                });
+              </script>
+            </div>
+            ${select('*')}
+            </div>
           </div>
           <div class="layout_ft">
             <div id="footer">
