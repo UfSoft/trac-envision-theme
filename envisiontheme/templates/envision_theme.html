@@ -12,6 +12,8 @@
       IMG.src = "${req.href.chrome('theme/imgs/green_layout.png')}";
     </script>
     ${select('*')}
+    <meta name="Original-Author" content="Erwin Aligam - ealigam@gmail.com" />
+    <meta name="Author" content="Pedro Algarvio - ufs@ufsoft.org" />
     <link type="text/css" href="${req.href.chrome('theme/envision.css')}" rel="stylesheet"/>
   </head>
   <body py:match="body" py:attrs="select('@*')">
@@ -110,6 +112,20 @@
                 });
               </script>
             </div>
+            <!--! Tabs Div -->
+            <div id="tabs" class="layout dialog"
+                 py:match="div[@id='tabs']" py:attrs="select('@*')">
+              <div class="layout_content"> <!--! top right PNG -->
+                <div class="layout_wrapper">
+                  <div class="layout_t"></div> <!--! top left PNG -->
+                  <div class="layout_bd">
+                    ${select('*')}
+                  </div>
+                </div>
+              </div>
+              <!-- bottom PNG -->
+              <div class="layout_b"><div></div></div>
+            </div>
             ${select('*')}
             </div>
           </div>
@@ -123,6 +139,10 @@
                 By <a href="http://www.edgewall.org/">Edgewall Software</a>.
               </p>
               <p class="right">${chrome.footer}</p>
+              <p class="copyright">Envision Template by <a href="http://www.styleshout.com"
+              >Erwin Aligam</a>. Ported to <a href="http://trac.edgewall.org/"
+              >Trac</a> by <a href="https://hg.ufsoft.org/TracEnvisionTheme"
+              >Pedro Algarvio</a>.</p>
             </div>
           </div>
         <!--! End Content  -->

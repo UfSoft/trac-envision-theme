@@ -170,20 +170,24 @@ blockquote {
 
 #main #content #tabs ul li { list-style-image: none; margin-left: 0px; }
 
-
-
 #footer {
   background: transparent url(imgs/footer_hr.png) repeat-x top;
   border: none;
   padding: 10px 0 0 0;
   margin-top: 4px;
   color: #fff;
+  height: 47px;
+  vertical-align: middle;
 }
 #footer :link, #footer :visited { color: #fff; }
 #footer :link:hover, #footer :visited:hover {
   color: #D4E59F; background-color: transparent;
 }
-
+.layout_ft p.copyright {
+  text-align: center; font-size: 80%; margin: 0 0; padding: 0 0;
+  margin-top: -25px;
+  width: 100%; float: left;
+}
 /* headers */
 h1, h2, h3 {
   font-family: 'Trebuchet MS', Tahoma, Sans-serif;
@@ -200,15 +204,15 @@ h1 { padding-top: 1em; */}
 
 #ticket { background-color: transparent; border: none; padding: 0 0 0 0; }
 
-#info, div#tabs, .diff li.entry {
-  background-color: #edfdce; /* color: #68774A; */
-}
+#info, .diff li.entry { background-color: #edfdce; }
 #ticket, .wiki-toc, .diff h2 {
   background-color: transparent; color: #68774A; border: none;
 }
 .wiki-toc .layout_bd ul { margin-left: 10px; }
-.wiki-toc .layout_bd .active { background-color: #edfdce; }
+.wiki-toc .layout_bd .active, #tabs li li.active { background-color: #edfdce; }
 #prefs { background-color: transparent; border: none; margin: 0 0; }
+#tabs { background-color: transparent; border: none; margin: 0 10px; }
+#tabs li { color: #68774A; }
 
 table.listing tbody tr.odd { background-color: #f4ffde; }
 
