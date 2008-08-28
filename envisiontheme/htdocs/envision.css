@@ -26,7 +26,7 @@ acronym {
 }
 blockquote {
   margin: 10px;
-  padding: 0 0 0 28px;
+  padding: 0 0 0 40px;
   border: 1px solid #f2f2f2;
   background: #FAFAFA url(imgs/quote.gif) no-repeat 5px 5px;
 }
@@ -113,6 +113,24 @@ blockquote {
                      height/overflow issues. */
 }
 
+.layout .dialog { max-width: 710px; }
+.layout .dialog .layout_content,
+.layout .dialog  .layout_t,
+.layout .dialog .layout_b,
+.layout .dialog .layout_b div {
+  background: transparent url(imgs/green_layout.png) no-repeat top right;
+  _background-image: url(imgs/gree_layout.gif);
+  background-color: transparent;
+}
+.layout .dialog .layout_t {
+  background-position: top left;
+  _height: 700px; /* arbitrary long height, IE 6 */
+}
+.layout .dialog .layout_bd { max-height: 680px; }
+.layout .dialog .layout_bd { background-color: transparent; }
+.layout .dialog .layout_b { background-position: bottom right; }
+.layout .dialog .layout_b div { background-position:left bottom; }
+
 /* Round Corners Style - END */
 
 #metanav li { border-right: none; }
@@ -127,7 +145,7 @@ blockquote {
 }
 
 #mainnav {
-  background: url(imgs/menu.jpg) repeat-x 0 0;
+  background: url(imgs/menu.png) repeat-x 0 0;
   height: 33px;
   border: none;
   margin: 0 0;
@@ -152,23 +170,7 @@ blockquote {
 
 #main #content #tabs ul li { list-style-image: none; margin-left: 0px; }
 
-#search input.button, .buttons input, #attachments input {
-  font: 12px Arial, Sans-serif;
-  height: 20px;
-  margin: 0;
-  padding: 2px 3px;
-  color: #fff;
-  background: #8EB50C url(imgs/button-bg.jpg) repeat-x 0 0;
-  border: none;
-  font-weight: bold;
-}
 
-#search input.textbox {
-  width: 120px;
-  color: #777;
-  padding: 2px;
-  border: 1px solid #E5E5E5;
-}
 
 #footer {
   background: transparent url(imgs/footer_hr.png) repeat-x top;
@@ -196,9 +198,17 @@ h1 { padding-top: 1em; */}
 }
 .layout .prefs ul li, #tabs ul li { list-style-image: none; }
 
-#ticket, #info, div#tabs, .wiki-toc {
-  background-color: #edfdce; color: #68774A;
+#ticket { background-color: transparent; border: none; padding: 0 0 0 0; }
+
+#info, div#tabs, .diff li.entry {
+  background-color: #edfdce; /* color: #68774A; */
 }
+#ticket, .wiki-toc, .diff h2 {
+  background-color: transparent; color: #68774A; border: none;
+}
+.wiki-toc .layout_bd ul { margin-left: 10px; }
+.wiki-toc .layout_bd .active { background-color: #edfdce; }
+#prefs { background-color: transparent; border: none; margin: 0 0; }
 
 table.listing tbody tr.odd { background-color: #f4ffde; }
 
@@ -206,9 +216,46 @@ table.listing thead th {
   background-image: url(imgs/green-bg.png);
   padding-left: 12px;
   padding-right: 12px;
-  color: #fff;
   border-left: 1px solid #B6D59A;
   border-bottom: solid 2px #fff;
 }
 
+#ticket table.properties { border-top: 1px solid #8cac3a; }
+#ticket h2, #ticket h3 { color: #8cac3a; }
+#ticket .description h3 { border-bottom : 1px solid #8cac3a; }
+#ticket table.properties tr { border: none; }
 #ticket table.properties th { text-align: right; padding-right: 0px; }
+
+#search input.button,
+.buttons input,
+#attachments input,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]:hover {
+  font: 12px Arial, Sans-serif;
+  height: 22px;
+  margin: 0;
+  padding: 2px 3px;
+  color: #fff;
+  background: #8EB50C url(imgs/button-bg.png) repeat-x 0 0;
+  border: 1px solid #8cac3a;
+  font-weight: bold;
+}
+
+#search input.textbox {
+  width: 120px;
+  color: #777;
+  padding: 2px;
+  border: 1px solid #E5E5E5;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+#search input.button:hover,
+.buttons input:hover,
+#attachments input:hover { color: #8cac3a; }
+#search input.button:hover, .buttons input:hover, #attachments input:hover {
+  background-image: none;
+  background-color: #CCCCBB;
+}
