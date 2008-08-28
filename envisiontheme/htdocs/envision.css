@@ -231,10 +231,9 @@ table.listing thead th {
 #attachments input,
 input[type="button"],
 input[type="submit"],
-input[type="reset"]:hover {
+input[type="reset"] {
   font: 12px Arial, Sans-serif;
   height: 22px;
-  margin: 0;
   padding: 2px 3px;
   color: #fff;
   background: #8EB50C url(imgs/button-bg.png) repeat-x 0 0;
