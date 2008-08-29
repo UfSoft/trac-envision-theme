@@ -113,7 +113,7 @@ blockquote {
                      height/overflow issues. */
 }
 
-.layout .dialog { max-width: 710px; }
+.layout .dialog { max-width: 700px; }
 .layout .dialog .layout_content,
 .layout .dialog  .layout_t,
 .layout .dialog .layout_b,
@@ -126,7 +126,7 @@ blockquote {
   background-position: top left;
   _height: 700px; /* arbitrary long height, IE 6 */
 }
-.layout .dialog .layout_bd { max-height: 680px; }
+.layout .dialog .layout_bd { max-height: 1380px; }
 .layout .dialog .layout_bd { background-color: transparent; }
 .layout .dialog .layout_b { background-position: bottom right; }
 .layout .dialog .layout_b div { background-position:left bottom; }
@@ -212,7 +212,8 @@ h1 { padding-top: 1em; */}
 .wiki-toc .layout_bd .active, #tabs li li.active { background-color: #edfdce; }
 #prefs { background-color: transparent; border: none; margin: 0 0; }
 #tabs { background-color: transparent; border: none; margin: 0 10px; }
-#tabs li { color: #68774A; }
+#tabs li { color: #68774A; white-space: nowrap; }
+#tabs { width: 14em; }
 
 table.listing tbody tr.odd { background-color: #f4ffde; }
 
