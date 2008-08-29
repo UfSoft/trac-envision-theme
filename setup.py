@@ -11,6 +11,7 @@ setup(
   package_data = { 'envisiontheme': [
                     'templates/*.html',
                     'htdocs/*.css',
+                    'htdocs/*.png',
                     'htdocs/imgs/*.png',
                     'htdocs/imgs/*.gif']},
   author        = 'Pedro Algarvio',

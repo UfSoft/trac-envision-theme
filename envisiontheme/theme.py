@@ -5,4 +5,4 @@ from themeengine.api import ThemeBase
 
 class EnvisionTheme(ThemeBase):
     """Envision theme based on http://www.freelayouts.com/templates/Envision"""
-    template = htdocs = True
+    template = htdocs = css = screenshot = True
