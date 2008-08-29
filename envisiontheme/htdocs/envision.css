@@ -200,7 +200,8 @@ h1 { padding-top: 1em; */}
   list-style-image: url(imgs/bullet.png);
   _list-style-image: url(imgs/bullet.gif);
 }
-.layout .prefs ul li, #tabs ul li { list-style-image: none; }
+.layout .prefs ul li, #tabs ul li, .layout ul li.milestone {
+  list-style-image: none; }
 
 #ticket { background-color: transparent; border: none; padding: 0 0 0 0; }
 
