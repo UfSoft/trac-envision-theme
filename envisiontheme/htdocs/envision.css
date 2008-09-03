@@ -9,21 +9,11 @@
 body { background: #CCC; color: #555; }
 ul, ol { margin: 5px 20px; padding: 0 20px; }
 
-code {
-  margin: 5px 0;
-  padding: 10px;
-  text-align: left;
-  display: block;
-  overflow: auto;
-  font: 500 1em/1.5em 'Lucida Console', 'courier new', monospace ;
-  /* white-space: pre; */
-  background: #FAFAFA;
-  border: 1px solid #f2f2f2;
-}
 acronym {
   cursor: help;
   border-bottom: 1px dotted #777;
 }
+
 blockquote {
   margin: 10px;
   padding: 0 0 0 40px;
@@ -200,7 +190,7 @@ h1 { padding-top: 1em; */}
   list-style-image: url(imgs/bullet.png);
   _list-style-image: url(imgs/bullet.gif);
 }
-.layout .prefs ul li, #tabs ul li, .layout ul li.milestone {
+.layout .prefs ul li, #tabs ul li, .layout ul li.milestone, #traceback ul li {
   list-style-image: none; }
 
 #ticket { background-color: transparent; border: none; padding: 0 0 0 0; }
@@ -215,6 +205,7 @@ h1 { padding-top: 1em; */}
 #tabs { background-color: transparent; border: none; margin: 0 10px; }
 #tabs li { color: #68774A; white-space: nowrap; }
 #tabs { width: 14em; }
+#tabcontent { margin-left: 14em; }
 
 table.listing tbody tr.odd { background-color: #f4ffde; }
 
