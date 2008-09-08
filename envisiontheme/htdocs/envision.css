@@ -191,7 +191,7 @@ h1 { padding-top: 1em; */}
   _list-style-image: url(imgs/bullet.gif);
 }
 .layout .prefs ul li, #tabs ul li, .layout ul li.milestone, #traceback ul li,
-.layout #overview dl dd {
+.layout #overview .files li {
   list-style-image: none; }
 
 #ticket { background-color: transparent; border: none; padding: 0 0 0 0; }
