@@ -205,7 +205,7 @@ h1 { padding-top: 1em; */}
 #prefs { background-color: transparent; border: none; margin: 0 0; }
 #tabs { background-color: transparent; border: none; margin: 0 10px; }
 #tabs li { color: #68774A; white-space: nowrap; }
-#tabs { width: 14em; }
+#content.admin #tabs { width: 14em; }
 #tabcontent { margin-left: 14em; }
 
 table.listing tbody tr.odd { background-color: #f4ffde; }
